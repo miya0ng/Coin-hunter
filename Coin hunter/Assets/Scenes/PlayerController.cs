@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NewMonoBehaviourScript : MonoBehaviour
@@ -31,4 +32,11 @@ public class NewMonoBehaviourScript : MonoBehaviour
         body.linearVelocity = velocity;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Coin"))
+        {
+            Destroy(other.gameObject);
+        }
+    }
 }
