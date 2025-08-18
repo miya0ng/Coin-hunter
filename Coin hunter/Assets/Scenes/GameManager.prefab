@@ -44,3 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e462d47b57000314297f61701f0d4cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOver: {fileID: 357204771365470966, guid: 06814e3e47c9d8340b4ce2ffdb644284, type: 3}
+  bestRecordText: {fileID: 0}
+  scoreText: {fileID: 4601885504686282125, guid: 1affeba4d4c2f074aab7e485ba2d34fe, type: 3}

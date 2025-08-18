@@ -5,24 +5,25 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem.Interactions;
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
     public GameObject gameOver;
 
     public TextMeshProUGUI bestRecordText;
+    public TextMeshProUGUI scoreText;
 
-    public TextMeshProUGUI timeText;
     private float coinScore;
     private bool isGameOver = false;
-
+  
     private void Start()
     {
+        Instance = this;
         gameOver.SetActive(false);
     }
     private void Update()
     {
         if (!isGameOver)
         {
-            coinScore += Time.deltaTime;
-            timeText.text = $"Score:{Mathf.FloorToInt(coinScore)}";
+            scoreText.text = $"Score:{Mathf.FloorToInt(coinScore)}";
         }
         else
         {
@@ -45,5 +46,10 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetFloat("BestTime", bestScore);
         }
         bestRecordText.text = $"Best Record:{Mathf.FloorToInt(bestScore)}";
+    }
+
+    public void AddScore(int amount)
+    {
+        coinScore += amount;
     }
 }

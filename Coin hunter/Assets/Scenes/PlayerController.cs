@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float speed = 8f;
 
@@ -37,6 +37,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         if (other.CompareTag("Coin"))
         {
             Destroy(other.gameObject);
+            GameManager.Instance.AddScore(1);
         }
     }
 }
