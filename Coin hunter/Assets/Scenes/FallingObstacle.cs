@@ -19,6 +19,7 @@ public class FallingObstacle : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Destroy(other.gameObject);
+            GameManager.Instance.GameOver();
         }
     }
 }

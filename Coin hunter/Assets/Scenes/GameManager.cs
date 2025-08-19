@@ -47,9 +47,13 @@ public class GameManager : MonoBehaviour
         }
         bestRecordText.text = $"Best Record:{Mathf.FloorToInt(bestScore)}";
     }
-
     public void AddScore(int amount)
     {
         coinScore += amount;
+    }
+
+    public void GameOver()
+    {
+        isGameOver = true;
     }
 }
